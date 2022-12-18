@@ -9,3 +9,8 @@ Youtube video:
 https://www.youtube.com/watch?v=F8rcDzyblG4
 
 # IA_NAVIR
+
+
+
+main.py -- Transformar audio em texto 
+index.js - Transformar texto em audio

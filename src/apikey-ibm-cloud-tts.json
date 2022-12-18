@@ -1,0 +1,8 @@
+{
+  "apikey": "tyfHznu-VYI2QjcYsBwirH9-gXH4R9Vaw3hWN6NqROGa",
+  "iam_apikey_description": "Auto-generated for key crn:v1:bluemix:public:text-to-speech:au-syd:a/957fd107e72648338e63cae354b65af5:46be3b5f-c3b9-4351-8aaa-a0a8e257bbc1:resource-key:367340b7-39c0-4898-a7ac-981addc1027c",
+  "iam_apikey_name": "Auto-generated service credentials",
+  "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+  "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/957fd107e72648338e63cae354b65af5::serviceid:ServiceId-aa008038-5c36-492a-a183-d5c1cdb588ec",
+  "url": "https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/46be3b5f-c3b9-4351-8aaa-a0a8e257bbc1"
+}
