@@ -5,8 +5,24 @@ Implicit Code - Youtube / text to speech using NodeJs and ibm-cloud Watson I.A.
 
 2- edit the ibm-cloud credentials
 
-Youtube video:
-https://www.youtube.com/watch?v=F8rcDzyblG4
+Links uteis: 
+
+    Youtube video:
+    https://www.youtube.com/watch?v=F8rcDzyblG4
+
+    Natural Language Understanding API:
+
+    https://cloud.ibm.com/apidocs/natural-language-understanding
+
+    Text to Speech API:
+
+    https://cloud.ibm.com/apidocs/text-to-speech
+
+    speech_recognition API:
+
+    https://pypi.org/project/SpeechRecognition/
+
+    
 
 # IA_NAVIR
 
