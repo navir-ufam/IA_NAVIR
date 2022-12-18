@@ -8,8 +8,12 @@ const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
 ffmpeg.setFfprobePath(ffprobePath);
 
-const video = path.join(__dirname, '../Roteiro.mp4');
-const audio = path.join(__dirname, '../Roteiro.mp3');
+//const video = path.join(__dirname, '../Roteiro.mp4');
+
+audio = path.join(__dirname, '../audio-file.flac');
+console.log('audio:', audio);
+
+
 
 const fs = require('fs');
 const { IamAuthenticator } = require('ibm-watson/auth');
@@ -18,28 +22,39 @@ const SpeechToTextV1 = require('ibm-watson/speech-to-text/v1');
 const credentials = require('./apikey-ibm-cloud-stt.json');
 
 async function transcription() {
-    console.log('criando o arquivo mp3', audio);
-    extractAudio().then(() => {    
-        console.log('iniciando a transcrição');
-        speechToText();
+    // console.log('criando o arquivo mp3', audio);
+    // extractAudio().then(() => {    
+    //     console.log('iniciando a transcrição');
+    //     speechToText();
+    // }).catch((e) => { console.log('erro:', e) });
+
+    // apeechToText().then(() => {
+    //     console.log('Processamento Finalizado');
+    // }).catch((e) => { console.log('erro:', e) });
+}
+
+
+    // async function extractAudio() {
+    //     return new Promise((resolve, reject) => {
+    //         try {
+    //             const command = ffmpeg(video);
+
+    //             command.format('mp3').save(audio).on('end', () => {
+    //                 console.log('Processamento Finalizado');
+    //                 resolve(audio);
+    //               });
+                
+                
+    //         } catch (error) {
+    //             reject(error);
+    //         }
+    //     });
+    // }
+
+    speechToText().then(() => {
+        console.log('Processamento Finalizado');
     }).catch((e) => { console.log('erro:', e) });
 
-    async function extractAudio() {
-        return new Promise((resolve, reject) => {
-            try {
-                const command = ffmpeg(video);
-
-                command.format('mp3').save(audio).on('end', () => {
-                    console.log('Processamento Finalizado');
-                    resolve(audio);
-                  });
-                
-                
-            } catch (error) {
-                reject(error);
-            }
-        });
-    }
 
     async function speechToText() {
         const speechToText = new SpeechToTextV1({
@@ -49,10 +64,14 @@ async function transcription() {
             serviceUrl: credentials.url,
           });
           
+          var idioma = 'pt-BR_BroadbandModel';
+          var idiomaTeste = 'en-US_BroadbandModel';
+
+
           const params = {
             objectMode: false,
-            contentType: 'audio/mp3',
-            model: 'pt-BR_BroadbandModel',
+            contentType: 'audio/flac',
+            model: idiomaTeste,
             keywords: ['roteiro', 'argumento', 'guião'],
             keywordsThreshold: 0.5,
             maxAlternatives: 3,
@@ -94,6 +113,6 @@ async function transcription() {
         console.log(name, JSON.stringify(event, null, 2));
     };
 
-}
+
 
 module.exports = transcription;
