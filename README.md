@@ -27,6 +27,4 @@ Links uteis:
 # IA_NAVIR
 
 
-
-main.py -- Transformar audio em texto 
-index.js - Transformar texto em audio
+index.js - Transformar texto em audio, audio para texto

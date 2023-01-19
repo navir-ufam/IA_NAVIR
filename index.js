@@ -1,7 +1,8 @@
 const transcription = require('./src/transcription');
-//const synthesize = require('./src/synthesize');
+const synthesize = require('./src/synthesize');
 
-//transcription();
-//synthesize();
 
-transcription();
+synthesize(); // texto para audio
+
+transcription(); //audio para texto
+
